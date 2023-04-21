@@ -16,7 +16,26 @@ sns.relplot(x="absences",
 # Show plot
 plt.show()
 ```
+```
+# Change to make subplots based on study time
+sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter",col="study_time")
 
+# Show plot
+plt.show()
+```
+```
+# Change to use relplot() instead of scatterplot()
+sns.relplot(x="absences",
+            y="G3",
+            data=student_data,
+            kind='scatter',
+            row="study_time")
+
+# Show plot
+plt.show()
+```
 ### Creating two-factor subplots
 
 ```
@@ -32,9 +51,50 @@ sns.relplot(x="G1", y="G3",
 # Show plot
 plt.show()
 ```
+```
+# Adjust further to add subplots based on family support
+sns.relplot(x="G1", y="G3",
+            data=student_data,
+            kind="scatter",
+            col="schoolsup",
+            col_order=["yes", "no"],
+            row="famsup",
+            row_order=["yes", "no"])
 
+# Show plot
+plt.show()
+```
+```
+# Adjust further to add subplots based on family support
+sns.relplot(x="G1", y="G3",
+            data=student_data,
+            kind="scatter",
+            col="schoolsup",
+            col_order=["yes", "no"],
+            row="famsup",
+            row_order=["yes", "no"])
+
+# Show plot
+plt.show()
+```
 ### Changing the size of scatter plot points
 
+```
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create scatter plot of horsepower vs. mpg
+sns.relplot(x="horsepower",
+            y="mpg",
+            data=mpg,
+            kind="scatter",
+            size="cylinders",
+            hue="cylinders")
+
+# Show plot
+plt.show()
+```
 ```
 # Import Matplotlib and Seaborn
 import matplotlib.pyplot as plt
