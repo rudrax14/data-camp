@@ -22,6 +22,39 @@ sns.catplot(x="Parents Advice",
 # Show plot
 plt.show()
 ```
+```
+# Set the style to "whitegrid"
+sns.set_style('whitegrid')
+
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes",
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice",
+            data=survey_data,
+            kind="count",
+            order=category_order)
+
+# Show plot
+plt.show()
+```
+```
+# Change the color palette to "RdBu"
+sns.set_style("whitegrid")
+sns.set_palette("RdBu")
+
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes", 
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice", 
+            data=survey_data, 
+            kind="count", 
+            order=category_order)
+
+# Show plot
+plt.show()
+```
 
 ### Changing the scale
 
@@ -31,6 +64,39 @@ sns.set_context('paper')
 # sns.set_context('notebook')
 # sns.set_context('talk')
 # sns.set_context('poster')
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+```
+```
+# Change the context to "notebook"
+sns.set_context("notebook")
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+```
+```
+# Change the context to "notebook"
+sns.set_context("talk")
+
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
+```
+```
+# Change the context to "poster"
+sns.set_context("poster")
 
 # Create bar plot
 sns.catplot(x="Number of Siblings", y="Feels Lonely",
@@ -105,7 +171,22 @@ g.set_title("Average MPG Over Time")
 # Show plot
 plt.show()
 ```
+```
+# Create line plot
+g = sns.lineplot(x="model_year", y="mpg_mean", 
+                 data=mpg_mean,
+                 hue="origin")
 
+# Add a title "Average MPG Over Time"
+g.set_title("Average MPG Over Time")
+
+# Add x-axis and y-axis labels
+g.set(xlabel="Car Model Year", 
+      ylabel="Average MPG")
+
+# Show plot
+plt.show()
+```
 ### Rotating x-tick labels
 
 ```
