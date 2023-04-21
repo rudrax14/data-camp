@@ -1,7 +1,6 @@
 ### Plotting a scatterplot from longitude and latitude
-```
-Latitude is plotted as x on the horizontal axis.
-```
+
+'Latitude is plotted as x on the horizontal axis.'
 
 ### Styling a scatterplot
 ```
