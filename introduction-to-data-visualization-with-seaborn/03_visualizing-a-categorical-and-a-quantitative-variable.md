@@ -13,7 +13,22 @@ sns.catplot(x='Internet usage', data=survey_data, kind='count')
 # Show plot
 plt.show()
 ```
+```
+# Change the orientation of the plot
+sns.catplot(y="Internet usage", data=survey_data,
+            kind="count")
 
+# Show plot
+plt.show()
+```
+```
+# Separate into column subplots based on age category
+sns.catplot(y="Internet usage", data=survey_data,
+            kind="count",col='Age Category')
+
+# Show plot
+plt.show()
+```
 ### Bar plots with percentages
 
 ```
@@ -39,7 +54,38 @@ sns.catplot(x='study_time',
 # Show plot
 plt.show()
 ```
+```
+# List of categories from lowest to highest
+category_order = ["<2 hours", 
+                  "2 to 5 hours", 
+                  "5 to 10 hours", 
+                  ">10 hours"]
 
+# Rearrange the categories
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=category_order)
+
+# Show plot
+plt.show()
+```
+```
+# List of categories from lowest to highest
+category_order = ["<2 hours", 
+                  "2 to 5 hours", 
+                  "5 to 10 hours", 
+                  ">10 hours"]
+
+# Turn off the confidence intervals
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=category_order,ci=None)
+
+# Show plot
+plt.show()
+```
 ### Create and interpret a box plot
 
 ```
@@ -57,7 +103,9 @@ sns.catplot(x='study_time',
 # Show plot
 plt.show()
 ```
-
+```
+The median grade among students studying less than 2 hours is 10.0.
+```
 ### Omitting outliers
 
 ```
@@ -86,6 +134,26 @@ sns.catplot(x="romantic", y="G3",
 # Show plot
 plt.show()
 ```
+```
+# Extend the whiskers to the 5th and 95th percentile
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[5,95])
+
+# Show plot
+plt.show()
+```
+```
+# Set the whiskers at the min and max values
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[0, 100])
+
+# Show plot
+plt.show()
+```
 
 ### Customizing point plots
 
@@ -99,9 +167,58 @@ sns.catplot(x='famrel',
 # Show plot
 plt.show()
 ```
+```
+# Add caps to the confidence interval
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",capsize=0.2)
+        
+# Show plot
+plt.show()
+```
+```
+# Remove the lines joining the points
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",
+            capsize=0.2,join=False)
+            
+# Show plot
+plt.show()
+```
 
 ### Point plots with subgroups
 
+```
+# Import median function from numpy
+from numpy import median
+
+# Plot the median number of absences instead of the mean
+sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school",
+            ci=None,
+            estimator=median)
+
+# Show plot
+plt.show()
+```
+```
+# Import median function from numpy
+from numpy import median
+
+# Plot the median number of absences instead of the mean
+sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school",
+            ci=None,
+            estimator=median)
+
+# Show plot
+plt.show()
+```
 ```
 # Import median function from numpy
 from numpy import median
