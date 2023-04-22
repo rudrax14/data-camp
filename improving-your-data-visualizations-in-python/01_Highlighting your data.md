@@ -57,19 +57,21 @@ sns.kdeplot(pollution[pollution.year != 2012].O3,
             label = 'other years')
 plt.show()
 ```
-### Comparing with two KDEs
+### Improving your KDEs
 ```
-# Filter dataset to the year 2012
-sns.kdeplot(pollution[pollution.year == 2012].O3, 
-            # Shade under kde and add a helpful label
-            shade = True,
-            label = '2012')
+sns.distplot(pollution[pollution.city == 'Vandenberg Air Force Base'].O3, 
+             label = 'Vandenberg', 
+             # Turn of the histogram and color blue to stand out
+             hist = False,
+             color = 'steelblue', 
+             # Turn on rugplot
+             rug = True)
 
-# Filter dataset to everything except the year 2012
-sns.kdeplot(pollution[pollution.year != 2012].O3, 
-            # Again, shade under kde and add a helpful label
-            shade = True,
-            label = 'other years')
+sns.distplot(pollution[pollution.city != 'Vandenberg Air Force Base'].O3, 
+             label = 'Other cities',
+             # Turn off histogram and color gray
+             hist = False,  
+             color = 'gray')
 plt.show()
 ```
 
