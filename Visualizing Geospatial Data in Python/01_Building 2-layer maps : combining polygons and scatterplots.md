@@ -20,6 +20,38 @@ plt.grid()
 # Show your plot
 plt.show()
 ```
+```
+# Import matplotlib.pyplot
+import matplotlib.pyplot as plt
+ 
+# Scatterplot 3
+plt.scatter(father_son.fheight, father_son.sheight,  c = 'yellow', edgecolor = 'darkblue')
+plt.show()
+plt.xlabel('father height (inches)')
+plt.ylabel('son height (inches)')
+plt.title('Son Height as a Function of Father Height')
+ 
+plt.grid()
+ 
+# Show your plot
+plt.show()
+```
+```
+# Import matplotlib.pyplot
+import matplotlib.pyplot as plt
+ 
+# Scatterplot 3
+plt.scatter(father_son.fheight, father_son.sheight,  c = 'yellow', edgecolor = 'darkblue')
+plt.show()
+plt.xlabel('father height (inches)')
+plt.ylabel('son height (inches)')
+plt.title('Son Height as a Function of Father Height')
+ 
+plt.grid()
+ 
+# Show your plot
+plt.show()
+```
 
 ### Extracting longitude and latitude
 ```
